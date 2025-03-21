@@ -5,7 +5,6 @@ using UnityEngine.Events;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Trigger Tag")]
-    public bool triggerTagEnabled = true;
     public string triggerTag = "Player";
     
     [Header("Trigger Enter / Exit")]
@@ -29,7 +28,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (triggerTagEnabled)
+        if (triggerTag != "")
         {
             if (other.tag == triggerTag)
             {
@@ -48,7 +47,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (triggerTagEnabled)
+        if (other.tag == triggerTag)
         {
             if (other.tag == triggerTag)
             {
